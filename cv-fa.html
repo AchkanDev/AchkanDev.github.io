@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اشکان ابوی — رزومه تخصصی توسعه‌دهنده ارشد فلاتر</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 10mm 12mm; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      line-height: 1.5;
+      font-size: 9.8pt;
+      direction: rtl;
+      -webkit-print-color-adjust: exact;
+    }
+    .cv-page {
+      max-width: 210mm;
+      margin: 15px auto;
+      background: #ffffff;
+      padding: 25px 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 4px;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .cv-page { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+    }
+    .control-bar {
+      max-width: 210mm;
+      margin: 15px auto 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #00f2fe;
+      color: #0f172a;
+      border: none;
+      padding: 8px 18px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-print:hover { background: #38bdf8; }
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header-left h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .header-left .subtitle {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 3px;
+    }
+    .header-right {
+      text-align: left;
+      font-size: 9pt;
+      color: #475569;
+      line-height: 1.4;
+      direction: ltr;
+    }
+    .header-right a { color: #0284c7; text-decoration: none; font-weight: 600; }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .summary-text { color: #334155; font-size: 9.5pt; line-height: 1.6; margin-bottom: 10px; }
+    .skills-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 9pt; }
+    .skills-table td { padding: 3px 0; vertical-align: top; }
+    .skills-table td.cat { font-weight: 700; color: #0f172a; width: 26%; }
+    .skills-table td.val { color: #334155; width: 74%; }
+    .item { margin-bottom: 12px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+    .item-title { font-weight: 800; font-size: 10.5pt; color: #0f172a; }
+    .item-sub { font-weight: 600; color: #0284c7; font-size: 9.5pt; }
+    .item-date { font-size: 8.5pt; font-weight: 700; color: #475569; font-family: 'JetBrains Mono', monospace; direction: ltr; }
+    .item-desc { font-size: 9pt; color: #334155; margin-bottom: 4px; line-height: 1.5; }
+    .item-bullets { list-style-type: disc; padding-right: 18px; color: #334155; font-size: 9pt; line-height: 1.5; }
+    .item-bullets li { margin-bottom: 2px; }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .tag {
+      font-size: 7.8pt;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 5px;
+      background: #f1f5f9;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  </style>
+</head>
+<body>
+
+  <div class="control-bar no-print">
+    <div><strong>اشکان ابوی — رزومه رسمی و تخصصی (نسخه فارسی)</strong></div>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn-print" onclick="window.print()">🖨️ چاپ / دریافت فایل PDF</button>
+      <a href="index.html" class="btn-print" style="background: #334155; color: #fff;">← بازگشت به سایت اصلی</a>
+    </div>
+  </div>
+
+  <div class="cv-page">
+    <header class="header">
+      <div class="header-left">
+        <h1>اشکان ابوی (AchkanDev)</h1>
+        <div class="subtitle">توسعه‌دهنده ارشد فلاتر و معماری اپلیکیشن‌های موبایل</div>
+      </div>
+      <div class="header-right">
+        <div>📧 <a href="mailto:Ashkan.abavi1@gmail.com">Ashkan.abavi1@gmail.com</a></div>
+        <div>💻 GitHub: <a href="https://github.com/AchkanDev" target="_blank">github.com/AchkanDev</a> (۸۲۶+ کامیت)</div>
+        <div>💬 Telegram: <a href="https://t.me/achkandev" target="_blank">t.me/achkandev</a> | LinkedIn: <a href="https://linkedin.com/in/achkandev" target="_blank">achkandev</a></div>
+        <div>🌐 وب‌سایت: <a href="https://AchkanDev.github.io" target="_blank">AchkanDev.github.io</a></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title">خلاصه اجرایی و تخصصی</div>
+      <p class="summary-text">
+        توسعه‌دهنده ارشد فلاتر با ۴+ سال سابقه تخصصی در طراحی، ساخت و انتشار اپلیکیشن‌های پیشرفته موبایل. متخصص پیاده‌سازی <strong>معماری پاک (Clean Architecture)</strong>، مدیریت استیت پیشرفته <strong>BLoC</strong>، بهینه‌سازی گرافیکی با <strong>موتور Impeller فلاتر</strong> و همگام‌سازی دیتابیس‌های آفلاین. توسعه‌دهنده و منتشرکننده اپلیکیشن‌های بین‌المللی و داخلی در <strong>Google Play Store</strong>، <strong>Apple App Store</strong>، کافه‌بازار و مایکت با بیش از ۱۵۰۰ نصب فعال و دارای ۱۴+ ریپازیتوری عمومی در گیت‌هاب.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">مهارت‌ها و تکنولوژی‌های تخصصی</div>
+      <table class="skills-table">
+        <tr>
+          <td class="cat">زبان‌ها و رانتایم:</td>
+          <td class="val"><strong>Dart 3.x</strong> (Null-Safety, Extension Types, Records, Pattern Matching)، HTML5، CSS3، JavaScript ES6+</td>
+        </tr>
+        <tr>
+          <td class="cat">فریم‌ورک و موتور گرافیکی:</td>
+          <td class="val"><strong>Flutter SDK (3.x)</strong>، موتور Impeller، متریال دیزاین ۳، کوپرتینو، CustomPainters و Ticker Animation Controllers</td>
+        </tr>
+        <tr>
+          <td class="cat">معماری و الگوی طراحی:</td>
+          <td class="val"><strong>Clean Architecture</strong> (لایه‌های Domain/Data/Presentation)، BLoC / Cubit، MVVM، اصول SOLID و تزریق وابستگی (get_it, injectable)</td>
+        </tr>
+        <tr>
+          <td class="cat">بک‌اند و ابری:</td>
+          <td class="val"><strong>اکوسیستم فایربیس</strong> (Auth, Firestore, FCM Push Notifications, Cloud Storage, Crashlytics)، REST APIs (Dio)، WebSockets</td>
+        </tr>
+        <tr>
+          <td class="cat">دیتابیس آفلاین:</td>
+          <td class="val"><strong>Hive DB</strong>، <strong>Isar DB</strong>، SQLite (sqflite)، Drift، Flutter Secure Storage، SharedPreferences</td>
+        </tr>
+        <tr>
+          <td class="cat">استورها و دواپس:</td>
+          <td class="val"><strong>Google Play Console</strong>، <strong>Apple App Store Connect</strong>، Git، GitHub Actions (CI/CD Pipelines)، تست‌های Unit و Widget</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title">سوابق کاری و دستاوردها</div>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">توسعه‌دهنده ارشد فلاتر و مهندس محصول</span>
+            <span class="item-sub"> — توسعه اپلیکیشن‌های تجاری و استورها</span>
+          </div>
+          <span class="item-date">1402 – PRESENT</span>
+        </div>
+        <ul class="item-bullets">
+          <li>معماری، توسعه و انتشار اپلیکیشن‌های تجاری فلاتر (<strong>ویکیلا</strong> در گوگل پلی و اپ استور، <strong>فریم‌سنج</strong>، <strong>مبین</strong>، <strong>واژه‌جو</strong>) با بیش از ۱۵۰۰ نصب فعال.</li>
+          <li>پیاده‌سازی دقیق Clean Architecture به صورت Feature-First همراه با جداسازی کامل منطق تجاری (Use Cases) از ویجت‌های UI.</li>
+          <li>طراحی موتورهای همگام‌سازی آفلاین با دیتابیس‌های سریع <strong>Hive و Isar DB</strong> جهت لود آنی اپلیکیشن‌ها بدون نیاز به اینترنت.</li>
+          <li>بهینه‌سازی نرخ فریم ویجت‌ها روی نرخ ثابت <strong>60 FPS</strong> در دستگاه‌های رده‌پایین و پرچمدار.</li>
+          <li>اتوماسیون خط لوله ساخت و تست با GitHub Actions CI/CD جهت بررسی آنالیز کد (`flutter analyze`) و تولید خروجی‌های AAB و IPA.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">توسعه‌دهنده فلاتر و فایربیس</span>
+            <span class="item-sub"> — تیم‌های توسعه نرم‌افزار موبایل</span>
+          </div>
+          <span class="item-date">1399 – 1402</span>
+        </div>
+        <ul class="item-bullets">
+          <li>توسعه اپلیکیشن‌های کراس‌پلتفرم متصل به سرویس‌های Real-time فایربیس (احراز هویت، دیتابیس Firestore و نوتیفیکیشن‌های FCM).</li>
+          <li>پیاده‌سازی رابط‌های کاربری پیچیده شامل فیدهای اجتماعی ریل‌تایم (<strong>اینستاگرام کلون</strong>) و مراحل سبد خرید و پرداخت (<strong>نایکی استور</strong>).</li>
+          <li>طراحی شبکه ارتباطی HTTP با کتابخانه <strong>Dio</strong> همراه با اینترسپتورهای تمدید توکن و مدیریت متمرکز خطاها.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">پروژه‌های شاخص و منتشر شده</div>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">⚖️ پلتفرم خدمات حقوقی ویکیلا (WeekiLaw)</span>
+            <span class="item-sub"> — دستیار هوش مصنوعی و دفتر کار وکلا</span>
+          </div>
+          <span class="item-date">Google Play & App Store & Bazaar</span>
+        </div>
+        <p class="item-desc">
+          <strong>جزئیات فنی:</strong> اپلیکیشن منتشر شده در <strong>گوگل پلی استور</strong>، <strong>اپ استور آیفون</strong>، کافه‌بازار و مایکت. شامل دستیار هوشمند حقوقی، مدیریت دفتر کار وکلا و نوبت‌دهی آنلاین مشاوره حقوقی.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Google Play</span><span class="tag">App Store</span><span class="tag">Flutter</span><span class="tag">AI API Integration</span><span class="tag">REST API (Dio)</span><span class="tag">Firebase</span><span class="tag">BLoC</span><span class="tag">Clean Arch</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🎮 اپلیکیشن فریم‌سنج (FrameSanj)</span>
+            <span class="item-sub"> — سنجش سخت‌افزار و تخمین FPS بازی‌ها</span>
+          </div>
+          <span class="item-date">کافه بازار و مایکت</span>
+        </div>
+        <p class="item-desc">
+          <strong>جزئیات فنی:</strong> اپلیکیشن آفلاین تحلیل مشخصات قطعات سیستم (CPU, GPU, RAM) و تخمین فریم ریت (FPS) بازی‌های کامپیوتری همراه با الگوریتم تطبیق سخت‌افزار.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Offline DB</span><span class="tag">Clean Architecture</span><span class="tag">BLoC</span><span class="tag">Matching Algorithm</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🕌 اپلیکیشن سبک زندگی مبین (Mobin)</span>
+            <span class="item-sub"> — قبله‌نما، اوقات شرعی و ذکرشمار (۱۵۰۰+ نصب)</span>
+          </div>
+          <span class="item-date">کافه بازار</span>
+        </div>
+        <p class="item-desc">
+          <strong>جزئیات فنی:</strong> اپلیکیشن با قبله‌نمای دقیق مجهز به سنسورهای مگنتومتر و شتاب‌سنج گوشی، محاسبه اوقات شرعی و ذکرشمار هوشمند دیجیتال با بیش از ۱۵۰۰ نصب فعال.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Sensors & GPS</span><span class="tag">Offline Sync</span><span class="tag">Location Services</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🔤 اپلیکیشن واژه‌جو (VazheJoo)</span>
+            <span class="item-sub"> — پیدا کردن کلمات مخفی فارسی به صورت آفلاین</span>
+          </div>
+          <span class="item-date">کافه بازار و مایکت</span>
+        </div>
+        <p class="item-desc">
+          <strong>جزئیات فنی:</strong> نرم‌افزار هوشمند کشف واژگان فارسی و الگوریتم‌های پردازش کلمات به صورت کاملاً آفلاین بدون نیاز به اتصال اینترنت.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Persian NLP</span><span class="tag">Algorithms</span><span class="tag">Hive Storage</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <div class="section-title">تحصیلات و تمرکز علمی</div>
+        <p style="font-size: 9.2pt; color: #334155;">
+          <strong>تحصیلات مهندسی نرم‌افزار و کامپیوتر</strong><br>
+          تمرکز علمی: معماری نرم‌افزار، اصول کدنویسی تمیز، سیستم‌های موبایل و ساختمان داده‌ها.
+        </p>
+      </div>
+      <div>
+        <div class="section-title">زبان‌ها</div>
+        <p style="font-size: 9.2pt; color: #334155;">
+          • <strong>فارسی:</strong> زبان مادری<br>
+          • <strong>انگلیسی:</strong> تسلط حرفه‌ای و کاری
+        </p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

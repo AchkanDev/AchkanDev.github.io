@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashkan Abavi — Senior Flutter Developer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 10mm 12mm; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      line-height: 1.45;
+      font-size: 9.8pt;
+      -webkit-print-color-adjust: exact;
+    }
+    .cv-page {
+      max-width: 210mm;
+      margin: 15px auto;
+      background: #ffffff;
+      padding: 25px 35px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 4px;
+    }
+    @media print {
+      body { background: #ffffff; }
+      .cv-page { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+    }
+    .control-bar {
+      max-width: 210mm;
+      margin: 15px auto 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 8px;
+    }
+    .btn-print {
+      background: #00f2fe;
+      color: #0f172a;
+      border: none;
+      padding: 8px 18px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-print:hover { background: #38bdf8; }
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header-left h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .header-left .subtitle {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 3px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 9pt;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .header-right a { color: #0284c7; text-decoration: none; font-weight: 600; }
+    .section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    .summary-text { color: #334155; font-size: 9.5pt; line-height: 1.5; margin-bottom: 10px; }
+    .skills-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 9pt; }
+    .skills-table td { padding: 3px 0; vertical-align: top; }
+    .skills-table td.cat { font-weight: 700; color: #0f172a; width: 26%; }
+    .skills-table td.val { color: #334155; width: 74%; }
+    .item { margin-bottom: 12px; }
+    .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+    .item-title { font-weight: 800; font-size: 10.5pt; color: #0f172a; }
+    .item-sub { font-weight: 600; color: #0284c7; font-size: 9.5pt; }
+    .item-date { font-size: 8.5pt; font-weight: 700; color: #475569; font-family: 'JetBrains Mono', monospace; }
+    .item-desc { font-size: 9pt; color: #334155; margin-bottom: 4px; line-height: 1.45; }
+    .item-bullets { list-style-type: disc; padding-left: 16px; color: #334155; font-size: 9pt; line-height: 1.45; }
+    .item-bullets li { margin-bottom: 2px; }
+    .tag-container { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+    .tag {
+      font-size: 7.8pt;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 5px;
+      background: #f1f5f9;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  </style>
+</head>
+<body>
+
+  <div class="control-bar no-print">
+    <div><strong>Ashkan Abavi — Technical Resume (English ATS Edition)</strong></div>
+    <div style="display: flex; gap: 10px;">
+      <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <a href="index.html" class="btn-print" style="background: #334155; color: #fff;">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <div class="cv-page">
+    <header class="header">
+      <div class="header-left">
+        <h1>Ashkan Abavi</h1>
+        <div class="subtitle">Senior Flutter Developer & Cross-Platform Architect</div>
+      </div>
+      <div class="header-right">
+        <div>📧 <a href="mailto:Ashkan.abavi1@gmail.com">Ashkan.abavi1@gmail.com</a></div>
+        <div>💻 GitHub: <a href="https://github.com/AchkanDev" target="_blank">github.com/AchkanDev</a> (826+ commits/yr)</div>
+        <div>💬 Telegram: <a href="https://t.me/achkandev" target="_blank">t.me/achkandev</a> | LinkedIn: <a href="https://linkedin.com/in/achkandev" target="_blank">achkandev</a></div>
+        <div>🌐 Portfolio: <a href="https://AchkanDev.github.io" target="_blank">AchkanDev.github.io</a></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title">Executive Summary</div>
+      <p class="summary-text">
+        Senior Flutter Developer & Mobile Architect with 4+ years of experience engineering production mobile applications. Specialized in <strong>Clean Architecture</strong>, <strong>BLoC state management</strong>, <strong>Impeller engine motion optimization</strong>, and <strong>offline-first database synchronization</strong>. Published applications globally on <strong>Google Play Store</strong>, <strong>Apple App Store</strong>, CafeBazaar, and Myket with 1,500+ active users. Author of 14+ public GitHub repositories demonstrating modular package architecture and clean code.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">Technical Core Competencies</div>
+      <table class="skills-table">
+        <tr>
+          <td class="cat">Languages & Runtimes:</td>
+          <td class="val"><strong>Dart 3.x</strong> (Null-Safety, Records, Patterns, Extension Types), HTML5, CSS3, ES6+ JavaScript</td>
+        </tr>
+        <tr>
+          <td class="cat">Framework & Engine:</td>
+          <td class="val"><strong>Flutter SDK (3.x)</strong>, Impeller Engine, Material 3, Cupertino, CustomPainters, Multi-Ticker Animation Controllers</td>
+        </tr>
+        <tr>
+          <td class="cat">Architecture & Design:</td>
+          <td class="val"><strong>Clean Architecture</strong>, Feature-First Modularization, BLoC/Cubit, MVVM, SOLID, Dependency Injection (get_it, injectable)</td>
+        </tr>
+        <tr>
+          <td class="cat">Backend & Cloud:</td>
+          <td class="val"><strong>Firebase Ecosystem</strong> (Auth, Firestore, FCM, Cloud Storage, Crashlytics), REST APIs (Dio), WebSockets</td>
+        </tr>
+        <tr>
+          <td class="cat">Database & Offline Sync:</td>
+          <td class="val"><strong>Hive DB</strong>, <strong>Isar DB</strong>, SQLite (sqflite), Drift, Flutter Secure Storage, SharedPreferences</td>
+        </tr>
+        <tr>
+          <td class="cat">App Stores & DevOps:</td>
+          <td class="val"><strong>Google Play Console</strong>, <strong>Apple App Store Connect</strong>, Git, GitHub Actions (CI/CD Pipelines), Unit & Widget Testing</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-title">Professional Experience</div>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Senior Flutter Developer & Product Engineer</span>
+            <span class="item-sub"> — Commercial Apps & App Stores</span>
+          </div>
+          <span class="item-date">2023 – PRESENT</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Architected, developed, and published production Flutter applications (<strong>WeekiLaw</strong> on Google Play & App Store, <strong>FrameSanj</strong>, <strong>Mobin</strong>, <strong>VazheJoo</strong>) reaching 1,500+ active users.</li>
+          <li>Enforced modular Feature-First Clean Architecture strictly isolating Domain entities, Use Cases, Repository implementations, and BLoC ViewModels.</li>
+          <li>Engineered offline-first local database sync engines using <strong>Hive & Isar DB</strong> guaranteeing zero-latency launch and smooth performance.</li>
+          <li>Optimized rendering trees to maintain a stable <strong>60 FPS</strong> rate across low-end and flagship devices.</li>
+          <li>Automated build pipelines using GitHub Actions CI/CD for static analysis (`flutter analyze`), unit testing, and release app bundle generation.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Flutter & Mobile Application Specialist</span>
+            <span class="item-sub"> — Mobile Software Solutions</span>
+          </div>
+          <span class="item-date">2020 – 2023</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Engineered cross-platform apps integrated with real-time Firebase backends (Authentication, Firestore live streams, FCM push notifications).</li>
+          <li>Developed complex UI/UX modules including real-time social feeds (<strong>Instagram Clone</strong>) and e-commerce shopping workflows (<strong>Nike Store</strong>).</li>
+          <li>Built HTTP network infrastructure using <strong>Dio</strong> featuring custom auth token refresh interceptors and centralized exception handling.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Detailed Projects Showcase & Published Apps</div>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">⚖️ WeekiLaw (ویکیلا)</span>
+            <span class="item-sub"> — AI Legal Assistant & Smart Lawyer Office Platform</span>
+          </div>
+          <span class="item-date">Google Play & App Store & Bazaar</span>
+        </div>
+        <p class="item-desc">
+          <strong>Technical Details:</strong> Published cross-platform legal services platform on <strong>Google Play Store</strong> and <strong>Apple App Store</strong>, as well as CafeBazaar & Myket. Features AI legal Q&A assistant, lawyer smart office dashboard, and online appointment booking.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Google Play</span><span class="tag">App Store</span><span class="tag">Flutter</span><span class="tag">AI API Integration</span><span class="tag">REST API (Dio)</span><span class="tag">Firebase</span><span class="tag">BLoC</span><span class="tag">Clean Arch</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🎮 FrameSanj (فریم‌سنج)</span>
+            <span class="item-sub"> — PC Game Compatibility & FPS Estimator App</span>
+          </div>
+          <span class="item-date">CafeBazaar & Myket</span>
+        </div>
+        <p class="item-desc">
+          <strong>Technical Details:</strong> Offline PC hardware analyzer & FPS estimator app that compares system specs (CPU, GPU, RAM) against minimum and recommended game requirements for 100+ titles.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Offline DB</span><span class="tag">Clean Architecture</span><span class="tag">BLoC</span><span class="tag">Hardware Matching Algorithm</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🕌 Mobin (مبین)</span>
+            <span class="item-sub"> — Spiritual Companion App (1,500+ Active Installs)</span>
+          </div>
+          <span class="item-date">CafeBazaar Published</span>
+        </div>
+        <p class="item-desc">
+          <strong>Technical Details:</strong> Spiritual companion app featuring real-time high-precision Qibla compass using device magnetometer & accelerometer sensors, prayer time calculation algorithms, and digital Dhikr counter. Reached 1,500+ active installs.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Sensors & GPS</span><span class="tag">Offline Sync</span><span class="tag">Location Services</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">🔤 VazheJoo (واژه جو)</span>
+            <span class="item-sub"> — Persian Offline Word Finder</span>
+          </div>
+          <span class="item-date">CafeBazaar & Myket</span>
+        </div>
+        <p class="item-desc">
+          <strong>Technical Details:</strong> Fast offline Persian word discovery application powered by custom word-generation algorithms and fast indexing to find hidden words from letter combinations without network connection.
+        </p>
+        <div class="tag-container">
+          <span class="tag">Flutter</span><span class="tag">Persian NLP</span><span class="tag">Algorithms</span><span class="tag">Hive Storage</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <div>
+        <div class="section-title">Education & Focus</div>
+        <p style="font-size: 9.2pt; color: #334155;">
+          <strong>Software & Computer Engineering Studies</strong><br>
+          Focus: Software Architecture, Clean Code Principles, Mobile Systems, Data Structures & Algorithms.
+        </p>
+      </div>
+      <div>
+        <div class="section-title">Languages</div>
+        <p style="font-size: 9.2pt; color: #334155;">
+          • <strong>Persian (فارسی):</strong> Native<br>
+          • <strong>English:</strong> Professional Working Proficiency
+        </p>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#7f00ff" />
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <!-- Circle Base -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGrad)" opacity="0.2" />
+  <circle cx="100" cy="100" r="88" fill="url(#avatarGrad)" stroke="url(#bgGrad)" stroke-width="3" />
+  
+  <!-- Developer Avatar Silhouette -->
+  <!-- Head -->
+  <circle cx="100" cy="75" r="32" fill="#00f2fe" opacity="0.9" />
+  <!-- Hair / Cap Cyber Touch -->
+  <path d="M 68 75 C 68 50, 132 50, 132 75 Z" fill="#7f00ff" opacity="0.8" />
+  <!-- Body / Shoulders -->
+  <path d="M 45 160 C 45 120, 155 120, 155 160 Z" fill="#00f2fe" opacity="0.8" />
+  <!-- Code Brackets Overlay -->
+  <text x="65" y="108" font-family="monospace" font-size="22" font-weight="bold" fill="#ffffff" opacity="0.9">&lt;/&gt;</text>
+</svg>
