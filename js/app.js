@@ -118,15 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderSimulatorTabs() {
     if (!simTabsContainer || !phoneScreen) return;
     
-    simTabsContainer.innerHTML = PORTFOLIO_DATA.appSimulators.map((sim, idx) => `
-      <div class="sim-tab-card ${idx === 0 ? 'active' : ''}" data-sim-id="${sim.id}">
-        <div class="sim-tab-header">
-          <div class="sim-tab-title"><span>${sim.icon}</span> ${sim.title}</div>
-          <span class="sim-tab-badge">${sim.badge}</span>
+    simTabsContainer.innerHTML = PORTFOLIO_DATA.appSimulators.map((sim, idx) => {
+      const title = currentLang === 'fa' ? sim.titleFa : sim.titleEn;
+      const subtitle = currentLang === 'fa' ? sim.subtitleFa : sim.subtitleEn;
+      const badge = currentLang === 'fa' ? sim.badgeFa : sim.badgeEn;
+      return `
+        <div class="sim-tab-card ${idx === 0 ? 'active' : ''}" data-sim-id="${sim.id}">
+          <div class="sim-tab-header">
+            <div class="sim-tab-title"><span>${sim.icon}</span> ${title}</div>
+            <span class="sim-tab-badge">${badge}</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">${subtitle}</div>
         </div>
-        <div style="font-size: 0.85rem; color: var(--text-muted);">${sim.subtitle}</div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     // Load initial mockup screen
     loadMockupScreen(PORTFOLIO_DATA.appSimulators[0]);
@@ -145,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function loadMockupScreen(sim) {
-    const data = sim.mockupData;
+    const data = currentLang === 'fa' ? sim.mockupDataFa : sim.mockupDataEn;
     phoneScreen.innerHTML = `
       <div class="screen-app-bar">
         <span class="screen-title">${data.screenTitle}</span>

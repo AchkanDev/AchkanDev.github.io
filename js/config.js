@@ -40,33 +40,55 @@ const PORTFOLIO_DATA = {
     { number: "4+", labelEn: "Global & Local Store Apps", labelFa: "اپلیکیشن منتشر شده در استورها" }
   ],
 
-  // Live Mobile Device App Previews
+  // Live Mobile Device App Previews (Full English & Farsi Data)
   appSimulators: [
     {
       id: "weekilaw-sim",
-      title: "WeekiLaw (ویکیلا)",
-      subtitle: "AI Legal Assistant & Smart Office",
+      titleEn: "WeekiLaw Platform",
+      titleFa: "WeekiLaw (ویکیلا)",
+      subtitleEn: "AI Legal Assistant & Smart Office",
+      subtitleFa: "دستیار هوش مصنوعی و دفتر کار حقوقی",
       icon: "⚖️",
-      badge: "Google Play & App Store & Bazaar",
+      badgeEn: "Google Play & App Store",
+      badgeFa: "گوگل پلی، اپ استور و بازار",
       uiColor: "#7f00ff",
-      mockupData: {
+      mockupDataEn: {
+        screenTitle: "WeekiLaw AI Assistant",
+        query: "Contract Analysis & Consultation...",
+        status: "AI Response Generated",
+        lawyers: "240+ Verified Lawyers Online",
+        availability: "Available on Google Play & App Store"
+      },
+      mockupDataFa: {
         screenTitle: "دستیار حقوقی ویکیلا",
         query: "تحلیل قرارداد تجاری و مشاوره آنلاین...",
         status: "پاسخ هوش مصنوعی دریافت شد",
-        lawyersCount: "۲۴۰+ وکیل فعال آنلاین",
-        feature: "منتشر شده در گوگل پلی، اپ استور، بازار و مایکت"
+        lawyers: "۲۴۰+ وکیل فعال آنلاین",
+        availability: "منتشر شده در گوگل پلی، اپ استور و بازار"
       }
     },
     {
       id: "framesanj-sim",
-      title: "FrameSanj (فریم‌سنج)",
-      subtitle: "PC Game FPS & Hardware Analyzer",
+      titleEn: "FrameSanj App",
+      titleFa: "FrameSanj (فریم‌سنج)",
+      subtitleEn: "PC Game FPS & Specs Analyzer",
+      subtitleFa: "سنجش سخت‌افزار و تخمین فریم ریت",
       icon: "🎮",
-      badge: "کافه بازار و مایکت",
+      badgeEn: "CafeBazaar & Myket",
+      badgeFa: "کافه بازار و مایکت",
       uiColor: "#00f2fe",
-      mockupData: {
+      mockupDataEn: {
+        screenTitle: "FrameSanj Hardware Analyzer",
+        game: "Cyberpunk 2077 / Witcher 3",
+        cpu: "Core i7 / Ryzen 7",
+        gpu: "RTX 3060 / RX 6700 XT",
+        ram: "16 GB DDR4",
+        fpsResult: "60-75 FPS (Optimal Hardware)",
+        verdict: "Compatible • Smooth 60 FPS"
+      },
+      mockupDataFa: {
         screenTitle: "بررسی سخت‌افزار فریم‌سنج",
-        gameName: "Cyberpunk 2077 / Witcher 3",
+        game: "Cyberpunk 2077 / Witcher 3",
         cpu: "Core i7 / Ryzen 7",
         gpu: "RTX 3060 / RX 6700 XT",
         ram: "16 GB DDR4",
@@ -76,16 +98,26 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "mobin-sim",
-      title: "Mobin (مبین)",
-      subtitle: "Spiritual Companion & Qibla Finder",
+      titleEn: "Mobin Spiritual App",
+      titleFa: "Mobin (مبین)",
+      subtitleEn: "Spiritual Companion & Qibla Finder",
+      subtitleFa: "قبله‌نما، اوقات شرعی و ذکرشمار",
       icon: "🕌",
-      badge: "۱,۵۰۰+ نصب فعال",
+      badgeEn: "1,500+ Active Installs",
+      badgeFa: "۱,۵۰۰+ نصب فعال",
       uiColor: "#10b981",
-      mockupData: {
+      mockupDataEn: {
+        screenTitle: "Mobin Companion App",
+        qibla: "217° SW Qibla Compass",
+        dhikr: "33 / 100 (Daily Counter)",
+        prayer: "Dhuhr 12:08 • Maghrib 19:42",
+        rating: "4.8 ★★★★★ (Store Rating)"
+      },
+      mockupDataFa: {
         screenTitle: "اپلیکیشن مبین",
-        qiblaDegree: "217° SW قبله‌نما",
-        dhikrCount: "33 / 100 (ذکر روز)",
-        prayerTimes: "اذان ظهر 12:08 • اذان مغرب 19:42",
+        qibla: "217° SW قبله‌نما",
+        dhikr: "33 / 100 (ذکر روز)",
+        prayer: "اذان ظهر 12:08 • اذان مغرب 19:42",
         rating: "4.8 ★★★★★ (کافه بازار)"
       }
     }
@@ -128,7 +160,7 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: "weekilaw",
-      titleEn: "WeekiLaw (ویکیلا)",
+      titleEn: "WeekiLaw Legal Platform",
       titleFa: "پلتفرم خدمات حقوقی ویکیلا (WeekiLaw)",
       category: "mobile",
       icon: "⚖️",
@@ -140,7 +172,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "framesanj",
-      titleEn: "FrameSanj (فریم سنج)",
+      titleEn: "FrameSanj Analyzer",
       titleFa: "اپلیکیشن فریم‌سنج (FrameSanj)",
       category: "mobile",
       icon: "🎮",
@@ -152,7 +184,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "mobin",
-      titleEn: "Mobin (مبین)",
+      titleEn: "Mobin Spiritual App",
       titleFa: "اپلیکیشن مذهبی و سبک زندگی مبین",
       category: "mobile",
       icon: "🕌",
@@ -164,7 +196,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "vazhejoo",
-      titleEn: "VazheJoo (واژه جو)",
+      titleEn: "VazheJoo Word Finder",
       titleFa: "اپلیکیشن واژه‌جو (VazheJoo)",
       category: "mobile",
       icon: "🔤",
