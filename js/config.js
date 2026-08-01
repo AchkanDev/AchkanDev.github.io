@@ -7,10 +7,10 @@ const PORTFOLIO_DATA = {
     name: "Ashkan Abavi",
     nameFa: "اشکان ابوی",
     username: "AchkanDev",
-    title: "Senior Flutter Developer & Cross-Platform Engineer",
+    title: "Senior Mobile Application Engineer & Cross-Platform Architect",
     status: "آماده همکاری",
-    bioEn: "Crafting fluid, production-grade Flutter applications with Clean Architecture, BLoC, and pixel-perfect design systems.",
-    bioFa: "توسعه‌دهنده فلاتر و اپلیکیشن‌های موبایل. متخصص پیاده‌سازی پروژه‌ها با Clean Architecture، مدیریت استیت BLoC و رابط‌های کاربری روان و سریع.",
+    bioEn: "Senior Mobile Engineer specializing in high-scalability cross-platform solutions, native performance optimization, and end-to-end product engineering.",
+    bioFa: "مهندس ارشد اپلیکیشن‌های موبایل. متخصص توسعه محصولات مقیاس‌پذیر کراس‌پلتفرم، بهینه‌سازی عملکرد نیتیو و معماری نرم‌افزار.",
     motto: "First, solve the problem. Then, write the code.",
     avatarUrl: "assets/avatar.png",
     email: "Ashkan.abavi1@gmail.com",
@@ -20,17 +20,17 @@ const PORTFOLIO_DATA = {
   },
 
   typewriterTitlesEn: [
-    "Senior Flutter Developer 📱",
-    "Clean Architecture & BLoC Expert 🏗️",
-    "Firebase & Mobile Specialist ⚡",
-    "UI/UX Motion Craftsman 🎨"
+    "Senior Mobile Application Engineer 📱",
+    "Cross-Platform Systems Architect 🏗️",
+    "High-Performance Mobile Specialist ⚡",
+    "UI/UX & Motion Engineering Specialist 🎨"
   ],
 
   typewriterTitlesFa: [
-    "توسعه‌دهنده فلاتر 📱",
-    "متخصص Clean Architecture و BLoC 🏗️",
-    "توسعه‌دهنده اپلیکیشن‌های موبایل ⚡",
-    "طراح انیمیشن و UI/UX روان 🎨"
+    "مهندس ارشد اپلیکیشن‌های موبایل 📱",
+    "معمار سیستم‌های کراس‌پلتفرم 🏗️",
+    "متخصص توسعه محصولات پیشرفته موبایل ⚡",
+    "طراح و مهندس انیمیشن و UI/UX 🎨"
   ],
 
   stats: [
@@ -124,35 +124,35 @@ const PORTFOLIO_DATA = {
   ],
 
   skills: [
-    { name: "Flutter & Dart", category: "mobile", percent: 98, icon: "📱" },
-    { name: "BLoC & State Mgmt", category: "architecture", percent: 95, icon: "⚡" },
-    { name: "Clean Architecture & MVVM", category: "architecture", percent: 94, icon: "🏗️" },
-    { name: "Firebase (Auth, Firestore, Cloud)", category: "backend", percent: 96, icon: "🔥" },
-    { name: "REST APIs, WebSockets, Dio", category: "backend", percent: 93, icon: "🌐" },
-    { name: "UI/UX & Custom Motion", category: "mobile", percent: 97, icon: "🎨" },
-    { name: "Git, GitHub Actions & CI/CD", category: "tools", percent: 90, icon: "🛠️" },
-    { name: "Offline Sync (Hive, Isar, Drift)", category: "mobile", percent: 92, icon: "💾" }
+    { name: "Flutter & Mobile Engineering", category: "mobile", percent: 98, icon: "📱" },
+    { name: "State Management Architectures", category: "architecture", percent: 95, icon: "⚡" },
+    { name: "Clean Architecture & Design Patterns", category: "architecture", percent: 95, icon: "🏗️" },
+    { name: "Firebase & Cloud Infrastructure", category: "backend", percent: 96, icon: "🔥" },
+    { name: "RESTful APIs, Dio & WebSockets", category: "backend", percent: 94, icon: "🌐" },
+    { name: "UI/UX & Motion Engineering", category: "mobile", percent: 97, icon: "🎨" },
+    { name: "Git, GitHub Actions & CI/CD", category: "tools", percent: 92, icon: "🛠️" },
+    { name: "Offline Sync & Local Databases", category: "mobile", percent: 94, icon: "💾" }
   ],
 
   experience: [
     {
       periodEn: "2023 - Present",
       periodFa: "۱۴۰۲ - تا کنون",
-      roleEn: "Senior Flutter Developer",
-      roleFa: "توسعه‌دهنده ارشد فلاتر",
+      roleEn: "Senior Mobile Application Engineer",
+      roleFa: "مهندس ارشد اپلیکیشن‌های موبایل",
       companyEn: "Commercial Products & App Stores",
       companyFa: "توسعه پروژه‌های تجاری و استورها",
-      descEn: "Engineered and launched Flutter applications (WeekiLaw on Google Play & App Store, FrameSanj, Mobin) focusing on Clean Architecture, BLoC, and offline database sync.",
-      descFa: "طراحی و توسعه اپلیکیشن‌های فلاتر با Clean Architecture و BLoC شامل پلتفرم حقوقی ویکیلا (منتشر شده در گوگل پلی، اپ استور، بازار و مایکت)، فریم‌سنج و مبین."
+      descEn: "Architected and engineered production cross-platform applications (WeekiLaw on Google Play & App Store, FrameSanj, Mobin) focusing on scalable architecture, state management, and offline database synchronization.",
+      descFa: "طراحی و توسعه پروژه‌های تجاری موبایل شامل پلتفرم حقوقی ویکیلا (منتشر شده در گوگل پلی، اپ استور، بازار و مایکت)، فریم‌سنج و مبین بر پایه معماری‌های مدرن و همگام‌سازی دیتابیس."
     },
     {
       periodEn: "2020 - 2023",
       periodFa: "۱۳۹۹ - ۱۴۰۲",
-      roleEn: "Flutter & Firebase Developer",
-      roleFa: "متخصص توسعه فلاتر و فایربیس",
-      companyEn: "Mobile Development Teams",
-      companyFa: "شرکت‌های توسعه نرم‌افزار موبایل",
-      descEn: "Built mobile backends, custom design systems, social feeds (Instagram Clone), and e-commerce shopping workflows (Nike Store).",
+      roleEn: "Mobile Software Engineer",
+      roleFa: "مهندس نرم‌افزار موبایل",
+      companyEn: "Software Solutions",
+      companyFa: "شرکت‌های توسعه نرم‌افزار",
+      descEn: "Engineered scalable mobile backends, custom design systems, social feeds (Instagram Clone), and e-commerce shopping workflows (Nike Store).",
       descFa: "پیاده‌سازی فروشگاه‌های آنلاین مدرن، شبیه‌سازی سیستم‌های اجتماعی با پشتیبانی Real-time فایربیس و دیزاین سیستم‌های اختصاصی."
     }
   ],
