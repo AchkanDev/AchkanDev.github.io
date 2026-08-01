@@ -227,60 +227,67 @@
 
 .avatar-glow-ring {
   position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
+  width: 340px;
+  height: 440px;
+  border-radius: 30px;
   background: var(--gradient-accent);
-  filter: blur(40px);
+  filter: blur(45px);
   opacity: 0.35;
   animation: float-glow 6s infinite alternate ease-in-out;
 }
 
 .avatar-card {
   position: relative;
-  width: 290px;
-  height: 290px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass-glow);
-  backdrop-filter: blur(12px);
-  padding: 1.25rem;
+  width: 310px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(0, 242, 254, 0.4);
+  backdrop-filter: blur(16px);
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 242, 254, 0.25);
   overflow: hidden;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .avatar-card:hover {
-  transform: translateY(-6px) rotate(1deg);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 242, 254, 0.8);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 242, 254, 0.4);
 }
 
 .avatar-img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 3px solid var(--primary-cyan);
-  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  width: 100%;
+  height: 330px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   object-fit: cover;
+  object-position: center 20%;
   margin-bottom: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .avatar-info {
   text-align: center;
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem;
 }
 
 .avatar-name {
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #ffffff;
+  letter-spacing: -0.3px;
 }
 
 .avatar-tag {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--primary-cyan);
   font-family: var(--font-code);
+  font-weight: 600;
+  margin-top: 2px;
 }
 
 /* Interactive Phone Device Frame Simulator Widget */
