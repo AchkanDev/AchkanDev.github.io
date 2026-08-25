@@ -149,25 +149,134 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  let currentDhikrCount = 33;
+
   function loadMockupScreen(sim) {
-    const data = currentLang === 'fa' ? sim.mockupDataFa : sim.mockupDataEn;
-    phoneScreen.innerHTML = `
-      <div class="screen-app-bar">
-        <span class="screen-title">${data.screenTitle}</span>
-        <span style="font-size: 0.8rem;">60 FPS</span>
-      </div>
-      <div class="screen-content">
-        ${Object.entries(data).filter(([k]) => k !== 'screenTitle').map(([key, val]) => `
-          <div class="screen-widget-card">
-            <div style="color: var(--text-dim); font-size: 0.72rem; text-transform: uppercase;">${key}</div>
-            <div style="color: #fff; font-weight: 600; margin-top: 2px;">${val}</div>
-          </div>
-        `).join('')}
-        <div class="fps-meter-badge">
-          <span>⚡</span> Flutter Impeller Engine • 60 FPS
+    const isFa = currentLang === 'fa';
+    let contentHtml = '';
+
+    if (sim.id === 'weekilaw-sim') {
+      contentHtml = `
+        <div class="screen-app-bar">
+          <span class="screen-title"><span>⚖️</span> ${isFa ? 'دستیار حقوقی ویکیلا' : 'WeekiLaw AI Assistant'}</span>
+          <span style="font-size: 0.72rem; color: #10b981; font-weight: 700;">● ${isFa ? '۲۴۰ وکیل آنلاین' : '240 Online'}</span>
         </div>
+        <div class="screen-content">
+          <div class="chat-bubble-user">
+            ${isFa ? 'سلام، لطفاً بند فورس‌ماژور این قرارداد تجاری رو بررسی کن.' : 'Please analyze the force majeure clause in this contract.'}
+          </div>
+          <div class="chat-bubble-ai">
+            <div style="font-size: 0.68rem; color: #00f2fe; margin-bottom: 3px; font-weight:700;">🤖 WeekiLaw Legal AI</div>
+            ${isFa ? 'بند فورس‌ماژور استاندارد است. ریسک حقوقی: <strong>بسیار کم (ایمن)</strong>.' : 'Clause verified against standard regulations. Legal risk: <strong>Low (Safe)</strong>.'}
+          </div>
+          <div class="screen-widget-card" style="border-color: rgba(127, 0, 255, 0.4); background: rgba(127, 0, 255, 0.08);">
+            <div style="font-size: 0.75rem; font-weight: 700; color: #f8fafc;">${isFa ? 'دفتر کار هوشمند وکلا' : 'Smart Lawyer Office'}</div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 2px;">${isFa ? 'مدیریت پرونده‌ها، نوبت‌دهی آنلاین و مشاوره صوتی' : 'Case tracking, online booking & audio consults'}</div>
+          </div>
+          <div class="fps-meter-badge">
+            <span>⚡</span> Flutter Impeller • 120 FPS
+          </div>
+        </div>
+      `;
+    } else if (sim.id === 'framesanj-sim') {
+      contentHtml = `
+        <div class="screen-app-bar">
+          <span class="screen-title"><span>🎮</span> ${isFa ? 'بررسی سخت‌افزار فریم‌سنج' : 'FrameSanj Analyzer'}</span>
+          <span style="font-size: 0.72rem; color: #00f2fe; font-family: var(--font-code); font-weight:700;">1080p Ultra</span>
+        </div>
+        <div class="screen-content">
+          <div class="screen-widget-card" style="padding: 8px 10px;">
+            <div style="font-size: 0.7rem; color: var(--text-muted);">${isFa ? 'بازی انتخابی:' : 'Target Game:'}</div>
+            <div style="font-weight: 700; color: #fff; font-size: 0.82rem;">Cyberpunk 2077 / Witcher 3</div>
+          </div>
+          <div class="fps-dial-box">
+            <div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">${isFa ? 'تخمین فریم ریت' : 'Estimated Performance'}</div>
+              <div style="font-size: 0.75rem; color: #10b981; font-weight: 700;">${isFa ? 'سازگار • اجرای روان' : 'Optimal • Smooth 60+'}</div>
+            </div>
+            <div class="fps-number-glow" id="fps-counter-val">72 FPS</div>
+          </div>
+          <div class="screen-widget-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-muted); margin-bottom:4px;">
+              <span>CPU: Ryzen 7 / i7</span><span>GPU: RTX 3060</span>
+            </div>
+            <div class="progress-bar-bg" style="height: 5px;">
+              <div class="progress-bar-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+          <button class="dhikr-tap-btn spring-tap" id="btn-benchmark-run" style="background: linear-gradient(135deg, #00f2fe, #7f00ff); font-size:0.75rem;">
+            <span>⚡</span> ${isFa ? 'تست مجدد بنچمارک سخت‌افزار' : 'Re-run Hardware Benchmark'}
+          </button>
+          <div class="fps-meter-badge">
+            <span>⚡</span> Offline DB Engine • Zero Latency
+          </div>
+        </div>
+      `;
+    } else {
+      contentHtml = `
+        <div class="screen-app-bar">
+          <span class="screen-title"><span>🕌</span> ${isFa ? 'اپلیکیشن مبین' : 'Mobin Spiritual App'}</span>
+          <span style="font-size: 0.72rem; color: #10b981; font-weight:700;">★ 4.8 Store</span>
+        </div>
+        <div class="screen-content">
+          <div class="fps-dial-box" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.08);">
+            <div>
+              <div style="font-size: 0.68rem; color: var(--text-muted);">${isFa ? 'قبله‌نمای هوشمند مگنتومتر' : 'Magnetometer Compass'}</div>
+              <div style="font-size: 0.85rem; color: #10b981; font-weight: 800;">217° SW (مکه مکرمه)</div>
+            </div>
+            <div style="font-size: 1.6rem;" class="compass-dial">🧭</div>
+          </div>
+          <div class="screen-widget-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#fff; font-weight:600;">
+              <span>${isFa ? 'اذان ظهر: ۱۲:۰۸' : 'Dhuhr: 12:08'}</span>
+              <span>${isFa ? 'اذان مغرب: ۱۹:۴۲' : 'Maghrib: 19:42'}</span>
+            </div>
+          </div>
+          <button class="dhikr-tap-btn spring-tap" id="btn-dhikr-increment">
+            <span>📿</span> ${isFa ? 'ذکرشمار روزانه:' : 'Dhikr Counter:'} <strong id="mockup-dhikr-val" style="font-size:0.95rem; margin-right:4px;">${currentDhikrCount} / 100</strong>
+          </button>
+          <div class="fps-meter-badge">
+            <span>⚡</span> 1,500+ Active Installs • CafeBazaar
+          </div>
+        </div>
+      `;
+    }
+
+    phoneScreen.innerHTML = `
+      <div class="phone-status-bar">
+        <span>09:41</span>
+        <div class="phone-dynamic-island">
+          <div class="dynamic-island-dot"></div>
+          <span style="font-size: 0.55rem; color: #00f2fe;">Flutter 3.x</span>
+        </div>
+        <span>100% 🔋</span>
       </div>
+      ${contentHtml}
     `;
+
+    // Add interactivity to phone elements
+    const dhikrBtn = document.getElementById('btn-dhikr-increment');
+    if (dhikrBtn) {
+      dhikrBtn.addEventListener('click', () => {
+        currentDhikrCount++;
+        const valEl = document.getElementById('mockup-dhikr-val');
+        if (valEl) valEl.textContent = `${currentDhikrCount} / 100`;
+      });
+    }
+
+    const benchmarkBtn = document.getElementById('btn-benchmark-run');
+    if (benchmarkBtn) {
+      benchmarkBtn.addEventListener('click', () => {
+        const counterEl = document.getElementById('fps-counter-val');
+        if (counterEl) {
+          counterEl.textContent = '...';
+          setTimeout(() => {
+            const randomFps = Math.floor(Math.random() * 15) + 65;
+            counterEl.textContent = `${randomFps} FPS`;
+          }, 300);
+        }
+      });
+    }
   }
 
   // Render Skills

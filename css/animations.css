@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Antigravity CV/Portfolio Design System - Keyframes & Animations
+   Antigravity CV/Portfolio Design System - Keyframes & Flutter Motion 120 FPS
    ========================================================================== */
 
 @keyframes pulse-dot {
@@ -58,14 +58,75 @@
   }
 }
 
-/* Scroll Reveal Classes */
+/* Scroll Reveal Classes (Zero-Jank GPU Accelerated) */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Interactive Simulator Animations */
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+.typing-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-cyan);
+  margin: 0 2px;
+  animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes compass-float {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(4deg); }
+}
+
+.compass-dial {
+  animation: compass-float 4s ease-in-out infinite alternate;
+}
+
+/* Spring Tap Feedback */
+.spring-tap {
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.spring-tap:active {
+  transform: scale(0.92);
+}
+
+/* Shimmer Light Reflection */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.shimmer-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
 }
