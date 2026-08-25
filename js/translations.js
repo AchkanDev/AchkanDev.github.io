@@ -54,7 +54,7 @@ const TRANSLATIONS = {
     contactDirectEmail: "Direct Email (Gmail / Outlook)",
     copyEmail: "Copy Email",
     emailCopied: "Email copied to clipboard!",
-    footerRights: "Built with modern Web & Flutter design principles.",
+    footerRights: "Ashkan.abavi1@gmail.com",
     modalClose: "Close"
   },
   fa: {
@@ -108,7 +108,7 @@ const TRANSLATIONS = {
     contactDirectEmail: "ارسال مستقیم از برنامه ایمیل (Gmail/Outlook)",
     copyEmail: "کپی ایمیل",
     emailCopied: "ایمیل با موفقیت کپی شد!",
-    footerRights: "طراحی شده بر اساس استانداردهای مدرن UI/UX.",
+    footerRights: "Ashkan.abavi1@gmail.com",
     modalClose: "بستن"
   }
 };
