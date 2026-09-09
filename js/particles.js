@@ -12,6 +12,14 @@ class ParticleEngine {
     this.mouse = { x: null, y: null, radius: 140 };
 
     this.init();
+
+    // Accessibility: respect user preference for reduced motion
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      this.drawFrame();
+      return;
+    }
+
     this.animate();
     this.addListeners();
   }
@@ -49,7 +57,7 @@ class ParticleEngine {
     });
   }
 
-  animate() {
+  drawFrame() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     for (let i = 0; i < this.particles.length; i++) {
@@ -97,7 +105,10 @@ class ParticleEngine {
         }
       }
     }
+  }
 
+  animate() {
+    this.drawFrame();
     requestAnimationFrame(() => this.animate());
   }
 }

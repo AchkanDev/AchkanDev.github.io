@@ -1,0 +1,32 @@
+# ==============================================================================
+# Robots.txt for Ashkan Abavi (AchkanDev) Portfolio & Technical Resume
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Generative Engine Optimization (GEO) & AI Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Canonical Sitemap Discovery
+Sitemap: https://achkandev.github.io/sitemap.xml
+
+# LLM Agent Discovery
+# LLMs-Context: https://achkandev.github.io/llms.txt
+
