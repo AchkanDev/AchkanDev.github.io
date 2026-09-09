@@ -21,9 +21,9 @@
 - **DevOps & Tooling**: CI/CD (GitHub Actions, Fastlane), Git, Docker, Automated Testing (Unit, Widget, Integration).
 
 ## Featured Published Applications & Projects
-- **WeekiLaw (ویکیلا)**: AI-powered legal assistant and management platform connecting clients with 240+ verified lawyers. Features document OCR, real-time consultation chat, and automated legal contract generators. Published on Google Play and App Store.
-- **Mobin App (مبین)**: Enterprise utility and billing management system with 1,500+ active installs across municipal utilities. Features secure payment gateway integration, SMS verification, offline caching, and biometric authentication.
-- **Flutter Portfolio & Device Simulator**: An interactive web simulator displaying native-like mobile app previews and a custom browser-based terminal shell. Live at https://achkandev.github.io.
+- **WeekiLaw (ویکیلا)**: Commercial legal consultation and lawyer office platform connecting clients with 240+ verified attorneys, featuring automated AI contract parsing and consultation tools. Published on Google Play and Apple App Store.
+- **Mobin App (مبین)**: Spiritual companion and utility application with 1,500+ active installs featuring high-precision sensor-based Qibla compass, offline prayer calculation, and daily utilities.
+- **FrameSanj (فریم‌سنج)**: Offline PC game compatibility and hardware performance analyzer.
 
 ## Documentation & Resumes
 - **Interactive Portfolio**: https://achkandev.github.io/

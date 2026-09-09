@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Antigravity CV/Portfolio Design System - Keyframes & Flutter Motion 120 FPS
+   Animations & Transitions - Ashkan Abavi Portfolio
    ========================================================================== */
 
 @keyframes pulse-dot {
@@ -30,21 +30,6 @@
     transform: translate(10px, -10px) scale(0.95);
     opacity: 0.3;
   }
-}
-
-@keyframes blink-cursor {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.typewriter-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.2em;
-  background: var(--primary-cyan);
-  margin-left: 2px;
-  vertical-align: middle;
-  animation: blink-cursor 0.8s infinite;
 }
 
 @keyframes slide-toast {
@@ -130,3 +115,176 @@
   transform: skewX(-20deg);
   animation: shimmer 3s infinite;
 }
+
+/* ==========================================================================
+   Ambient Background Keyframes (Hardware Accelerated GPU Compositor)
+   ========================================================================== */
+@keyframes aurora-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(80px, 45px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-50px, 80px, 0) scale(0.95);
+  }
+}
+
+@keyframes aurora-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-90px, -60px, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(60px, 40px, 0) scale(0.96);
+  }
+}
+
+@keyframes aurora-drift-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(60px, -70px, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-40px, 50px, 0) scale(1);
+  }
+}
+
+@keyframes grid-beam-scan {
+  0% {
+    transform: translateY(-40%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(40%) rotate(0deg);
+  }
+}
+
+/* ==========================================================================
+   Hairline Scroll & Reading Progress Laser Beam
+   ========================================================================== */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 50%, #10b981 100%);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  z-index: 99999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+  transition: transform 0.04s linear;
+  will-change: transform;
+}
+
+[dir="rtl"] #scroll-progress-bar {
+  transform-origin: 100% 50%;
+}
+
+/* ==========================================================================
+   Holographic 3D Card Tilt & Cursor Specular Highlight (Linear / Apple TV)
+   ========================================================================== */
+.card-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+/* Dynamic Specular Glare following Cursor */
+.card-tilt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    480px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.09),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card-tilt:hover::before {
+  opacity: 1;
+}
+
+.card-tilt:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(56, 189, 248, 0.2);
+}
+
+/* ==========================================================================
+   Magnetic Buttons (Apple VisionOS Spring Physics)
+   ========================================================================== */
+.btn-magnetic {
+  will-change: transform;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* ==========================================================================
+   Radar Ping & Micro-Interaction Keyframes
+   ========================================================================== */
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70%, 100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@keyframes tap-bounce {
+  0% { transform: scale(1); }
+  40% { transform: scale(0.92); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.tap-bounce {
+  animation: tap-bounce 0.24s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-aurora-blob {
+    animation: none !important;
+  }
+  .reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .shimmer-glow::after {
+    animation: none !important;
+  }
+  .status-dot::after {
+    animation: none !important;
+  }
+  .card-tilt {
+    transition: none !important;
+    transform: none !important;
+  }
+  .card-tilt::before {
+    display: none !important;
+  }
+  .btn-magnetic {
+    transition: none !important;
+    transform: none !important;
+  }
+  #scroll-progress-bar {
+    display: none !important;
+  }
+}
+
+

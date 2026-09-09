@@ -125,33 +125,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;800&family=Vazirmatn:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Stylesheets with Cache Busting Version Query -->
-  <link rel="stylesheet" href="css/main.css?v=8">
-  <link rel="stylesheet" href="css/components.css?v=8">
-  <link rel="stylesheet" href="css/animations.css?v=8">
+  <link rel="stylesheet" href="css/main.css?v=9">
+  <link rel="stylesheet" href="css/components.css?v=9">
+  <link rel="stylesheet" href="css/animations.css?v=9">
 </head>
 <body>
 
-  <!-- Dynamic Particle Canvas Background -->
-  <canvas id="particles-canvas"></canvas>
+  <!-- Top Reading & Scroll Progress Laser Beam -->
+  <div id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Ambient Interactive Background (Blueprint Grid, Stardust Canvas & Fluid Spotlight) -->
+  <div class="ambient-bg-layer" aria-hidden="true">
+    <canvas id="ambient-canvas" class="ambient-canvas"></canvas>
+    <div class="ambient-aurora-blob aurora-1"></div>
+    <div class="ambient-aurora-blob aurora-2"></div>
+    <div class="ambient-aurora-blob aurora-3"></div>
+    <div class="ambient-grid-pattern"></div>
+    <div class="ambient-spotlight" id="ambient-spotlight"></div>
+  </div>
 
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <a href="/" class="nav-brand">
-      <div class="logo-icon">&lt;/&gt;</div>
+      <div class="logo-icon btn-magnetic">AA</div>
       <span data-i18n="navBrand">اشکان ابوی</span>
     </a>
     <ul class="nav-menu">
-      <li><a href="#simulator" class="nav-link" data-i18n="navSimulator">پیش‌نمایش اپ‌ها</a></li>
+      <li><a href="#simulator" class="nav-link" data-i18n="navSimulator">نمونه‌کارها</a></li>
       <li><a href="#about" class="nav-link" data-i18n="navAbout">درباره من</a></li>
       <li><a href="#skills" class="nav-link" data-i18n="navSkills">مهارت‌ها</a></li>
       <li><a href="#experience" class="nav-link" data-i18n="navExperience">سوابق</a></li>
       <li><a href="#projects" class="nav-link" data-i18n="navProjects">پروژه‌ها</a></li>
-      <li><a href="#terminal" class="nav-link" data-i18n="navTerminal">ترمینال</a></li>
+      <li><a href="#architecture" class="nav-link" data-i18n="navArch">معماری سیستم</a></li>
       <li><a href="#contact" class="nav-link" data-i18n="navContact">تماس</a></li>
     </ul>
     <div class="nav-controls">
-      <button class="lang-btn" id="lang-toggle">
-        <span>🌐</span> English
+      <button class="lang-btn btn-magnetic" id="lang-toggle">
+        English
       </button>
     </div>
   </nav>
@@ -161,27 +171,26 @@
     <div class="hero-content">
       <div class="status-badge">
         <span class="status-dot"></span>
-        <span data-i18n="statusBadge">آماده همکاری</span>
+        <span data-i18n="statusBadge">مهندس ارشد اپلیکیشن‌های موبایل • آماده همکاری</span>
       </div>
       <h1 class="hero-title">
         <span data-i18n="heroGreeting">سلام، من </span>
-        <span class="gradient-text" data-i18n="heroName">اشکان ابوی</span>
-        <span data-i18n="heroNickname"> (AchkanDev)</span>
+        <span class="hero-name-highlight" data-i18n="heroName">اشکان ابوی</span>
+        <span class="hero-handle" data-i18n="heroNickname"> (AchkanDev)</span>
       </h1>
-      <div class="typewriter-wrapper">
-        <span id="typewriter"></span><span class="typewriter-cursor"></span>
+      <div class="hero-role-title" data-i18n="heroRoleTitle">
+        مهندس ارشد اپلیکیشن‌های موبایل و معمار سیستم‌های کراس‌پلتفرم
       </div>
       <p class="hero-bio" data-i18n="heroBio">
-        مهندس ارشد اپلیکیشن‌های موبایل. متخصص توسعه محصولات مقیاس‌پذیر کراس‌پلتفرم، بهینه‌سازی عملکرد نیتیو و معماری نرم‌افزار.
+        مهندس ارشد اپلیکیشن‌های موبایل؛ متخصص توسعه سیستم‌های مقیاس‌پذیر کراس‌پلتفرم، رندرینگ موتور Impeller فلاتر، معماری تمیز (Clean Architecture) و پایگاه‌های داده آفلاین.
       </p>
       <div class="hero-actions">
-        <a href="#simulator" class="btn btn-primary spring-tap" data-i18n="heroBtnDemo">📱 پیش‌نمایش اپ‌ها</a>
-        <a href="cv-fa.pdf" id="hero-btn-cv" target="_blank" rel="noopener noreferrer" class="btn btn-secondary spring-tap" data-i18n="heroBtnCv">📄 دریافت رزومه (PDF)</a>
+        <a href="#simulator" class="btn btn-primary btn-magnetic" data-i18n="heroBtnDemo">پیش‌نمایش اپ‌ها</a>
+        <a href="cv-fa.pdf" id="hero-btn-cv" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-magnetic" data-i18n="heroBtnCv">دریافت رزومه فنی (PDF)</a>
       </div>
     </div>
     <div class="hero-avatar-wrapper">
-      <div class="avatar-glow-ring"></div>
-      <div class="avatar-card">
+      <div class="avatar-card card-tilt">
         <img src="assets/avatar.png?v=8" alt="Ashkan Abavi" class="avatar-img" width="290" height="330" fetchpriority="high" onerror="this.src='assets/avatar.jpg?v=8'">
         <div class="avatar-info">
           <div class="avatar-name" data-i18n="avatarName">اشکان ابوی</div>
@@ -191,7 +200,7 @@
     </div>
   </header>
 
-  <!-- Live Mobile Device Frame Simulator (Flutter Level 120) -->
+  <!-- Mobile App Interface Preview -->
   <section class="section container simulator-section" id="simulator">
     <div class="section-header">
       <div class="section-subtitle" data-i18n="simSubtitle">PROJECT PREVIEW</div>
@@ -202,7 +211,7 @@
         <!-- Dynamic Sim Tabs generated by app.js -->
       </div>
       <div class="phone-frame-wrapper">
-        <div class="phone-device">
+        <div class="phone-device card-tilt">
           <div class="phone-screen" id="phone-screen">
             <!-- Dynamic Phone Content generated by app.js -->
           </div>
@@ -211,28 +220,157 @@
     </div>
   </section>
 
-  <!-- Interactive Terminal CLI Section -->
-  <section class="section container" id="terminal">
+  <!-- System Architecture & Production Engineering Showcase -->
+  <section class="section container" id="architecture">
     <div class="section-header">
-      <div class="section-subtitle" data-i18n="navTerminal">ترمینال تعاملی</div>
-      <h2 class="section-title" data-i18n="terminalTitle">ترمینال تعاملی — برای راهنما 'help' را تایپ کنید</h2>
+      <div class="section-subtitle" data-i18n="archSub">معماری سیستم</div>
+      <h2 class="section-title" data-i18n="archTitle">معماری سیستم و بنچمارک‌های پروداکشن</h2>
     </div>
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <div class="terminal-dot dot-red"></div>
-          <div class="terminal-dot dot-yellow"></div>
-          <div class="terminal-dot dot-green"></div>
+    
+    <div class="arch-showcase">
+      <!-- Architecture Tabs -->
+      <div class="arch-tabs">
+        <button class="arch-tab-btn btn-magnetic active" data-arch-tab="clean-arch">
+          <span class="arch-tab-num">01</span>
+          <span>Clean Architecture & DDD</span>
+        </button>
+        <button class="arch-tab-btn btn-magnetic" data-arch-tab="impeller-bench">
+          <span class="arch-tab-num">02</span>
+          <span>Impeller 120 FPS Frame Budget</span>
+        </button>
+        <button class="arch-tab-btn btn-magnetic" data-arch-tab="offline-sync">
+          <span class="arch-tab-num">03</span>
+          <span>Offline-First Sync Engine</span>
+        </button>
+      </div>
+
+      <!-- Content Panels -->
+      <div class="arch-display-card card-tilt">
+        <!-- Panel 1: Clean Architecture -->
+        <div class="arch-panel active" id="panel-clean-arch">
+          <div class="arch-panel-header">
+            <div class="arch-metric-pills">
+              <div class="arch-metric-pill">
+                <span class="metric-val">Pure Dart</span>
+                <span class="metric-lbl">Isolated Domain</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">Mocktail</span>
+                <span class="metric-lbl">Unit & BLoC Tests</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">IoC / DI</span>
+                <span class="metric-lbl">get_it & injectable</span>
+              </div>
+            </div>
+          </div>
+          <div class="arch-code-wrapper">
+            <div class="code-header">
+              <span>lib/features/auth/domain/usecases/authenticate_user.dart</span>
+              <span class="code-badge">Dart 3.x</span>
+            </div>
+            <pre class="code-block"><code><span class="keyword">class</span> <span class="type">AuthenticateUserUseCase</span> <span class="keyword">implements</span> <span class="type">UseCase</span>&lt;<span class="type">AuthSession</span>, <span class="type">AuthCredentials</span>&gt; {
+  <span class="keyword">final</span> <span class="type">AuthRepository</span> _repository;
+  <span class="keyword">final</span> <span class="type">TokenStorageService</span> _storage;
+
+  <span class="keyword">const</span> <span class="type">AuthenticateUserUseCase</span>(<span class="keyword">this</span>._repository, <span class="keyword">this</span>._storage);
+
+  <span class="meta">@override</span>
+  <span class="type">Future</span>&lt;<span class="type">Result</span>&lt;<span class="type">AuthSession</span>&gt;&gt; <span class="func">call</span>(<span class="type">AuthCredentials</span> credentials) <span class="keyword">async</span> {
+    <span class="keyword">final</span> result = <span class="keyword">await</span> _repository.<span class="func">authenticate</span>(credentials);
+    <span class="keyword">return</span> result.<span class="func">when</span>(
+      success: (session) <span class="keyword">async</span> {
+        <span class="keyword">await</span> _storage.<span class="func">persistTokens</span>(session.tokens);
+        <span class="keyword">return</span> <span class="type">Result</span>.<span class="func">ok</span>(session);
+      },
+      failure: (failure) =&gt; <span class="type">Result</span>.<span class="func">error</span>(failure),
+    );
+  }
+}</code></pre>
+          </div>
         </div>
-        <div class="terminal-title">achkandev@portfolio: ~ (bash)</div>
-        <div></div>
-      </div>
-      <div class="terminal-body" id="terminal-body">
-        <!-- Terminal lines populated by terminal.js -->
-      </div>
-      <div class="terminal-input-wrapper" style="padding: 0 1.25rem 1rem 1.25rem;">
-        <span class="terminal-prompt">achkandev@portfolio:~$</span>
-        <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" placeholder="type 'help', 'architecture', or 'dart'...">
+
+        <!-- Panel 2: Impeller 120 FPS Benchmark -->
+        <div class="arch-panel" id="panel-impeller-bench">
+          <div class="arch-panel-header">
+            <div class="arch-metric-pills">
+              <div class="arch-metric-pill">
+                <span class="metric-val">8.3ms</span>
+                <span class="metric-lbl">120 FPS Frame Budget</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">Vulkan / Metal</span>
+                <span class="metric-lbl">Hardware Graphics API</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">Impeller AOT</span>
+                <span class="metric-lbl">Pre-compiled Pipeline</span>
+              </div>
+            </div>
+          </div>
+          <div class="arch-code-wrapper">
+            <div class="code-header">
+              <span>shaders/fluid_distortion.frag (Impeller GLSL)</span>
+              <span class="code-badge">GLSL 460</span>
+            </div>
+            <pre class="code-block"><code><span class="meta">#version 460 core</span>
+<span class="meta">#include &lt;flutter/runtime_effect.glsl&gt;</span>
+
+<span class="keyword">uniform</span> <span class="type">vec2</span> uResolution;
+<span class="keyword">uniform</span> <span class="type">float</span> uTime;
+<span class="keyword">uniform</span> <span class="type">sampler2D</span> uTexture;
+<span class="keyword">out</span> <span class="type">vec4</span> fragColor;
+
+<span class="type">void</span> <span class="func">main</span>() {
+  <span class="type">vec2</span> uv = FlutterFragCoord().xy / uResolution;
+  <span class="type">vec2</span> distortion = <span class="type">vec2</span>(
+    <span class="func">sin</span>(uv.y * <span class="num">12.0</span> + uTime * <span class="num">1.8</span>) * <span class="num">0.012</span>,
+    <span class="func">cos</span>(uv.x * <span class="num">12.0</span> + uTime * <span class="num">1.8</span>) * <span class="num">0.012</span>
+  );
+  fragColor = <span class="func">texture</span>(uTexture, uv + distortion);
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- Panel 3: Offline Sync Engine -->
+        <div class="arch-panel" id="panel-offline-sync">
+          <div class="arch-panel-header">
+            <div class="arch-metric-pills">
+              <div class="arch-metric-pill">
+                <span class="metric-val">Isar DB</span>
+                <span class="metric-lbl">Embedded NoSQL Engine</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">Dart Isolates</span>
+                <span class="metric-lbl">Zero UI Thread Blocking</span>
+              </div>
+              <div class="arch-metric-pill">
+                <span class="metric-val">Bi-directional</span>
+                <span class="metric-lbl">Mutation Reconciler</span>
+              </div>
+            </div>
+          </div>
+          <div class="arch-code-wrapper">
+            <div class="code-header">
+              <span>lib/core/sync/offline_sync_coordinator.dart</span>
+              <span class="code-badge">Dart Isolates</span>
+            </div>
+            <pre class="code-block"><code><span class="keyword">class</span> <span class="type">OfflineSyncCoordinator</span> {
+  <span class="keyword">final</span> <span class="type">Isar</span> _isar;
+  <span class="keyword">final</span> <span class="type">ApiClient</span> _remoteClient;
+
+  <span class="keyword">Future</span>&lt;<span class="type">void</span>&gt; <span class="func">reconcilePendingMutations</span>() <span class="keyword">async</span> {
+    <span class="keyword">final</span> pendingQueue = <span class="keyword">await</span> _isar.<span class="func">syncEntities</span>
+      .<span class="func">filter</span>().<span class="func">statusEqualTo</span>(<span class="type">SyncStatus</span>.pending).<span class="func">findAll</span>();
+
+    <span class="keyword">if</span> (pendingQueue.isEmpty) <span class="keyword">return</span>;
+
+    <span class="comment">// Offload deserialization & encryption to background Isolate</span>
+    <span class="keyword">await</span> <span class="type">Isolate</span>.<span class="func">run</span>(() =&gt; <span class="type">SyncWorker</span>.<span class="func">batchProcess</span>(pendingQueue));
+  }
+}</code></pre>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -244,19 +382,19 @@
       <h2 class="section-title" data-i18n="aboutTitle">خلق اپلیکیشن‌های پیشرفته و روان</h2>
     </div>
     <div class="stats-grid" id="stats-container">
-      <div class="stat-card reveal">
+      <div class="stat-card reveal card-tilt">
         <div class="stat-number">826+</div>
         <div class="stat-label">کامیت فعال در یک سال گذشته</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal card-tilt">
         <div class="stat-number">14+</div>
         <div class="stat-label">ریپازیتوری‌های پروژه</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal card-tilt">
         <div class="stat-number">1,500+</div>
         <div class="stat-label">نصب فعال اپلیکیشن مبین</div>
       </div>
-      <div class="stat-card reveal">
+      <div class="stat-card reveal card-tilt">
         <div class="stat-number">4+</div>
         <div class="stat-label">اپلیکیشن منتشر شده در استورها</div>
       </div>
@@ -270,59 +408,98 @@
       <h2 class="section-title" data-i18n="skillsTitle">مهارت‌های تخصصی و فنی</h2>
     </div>
     <div class="skills-tabs">
-      <button class="skill-tab active" data-category="all" data-i18n="tabAll">همه مهارت‌ها</button>
-      <button class="skill-tab" data-category="mobile" data-i18n="tabMobile">موبایل و کراس‌پلتفرم</button>
-      <button class="skill-tab" data-category="backend" data-i18n="tabBackend">بک‌اند و ابری</button>
-      <button class="skill-tab" data-category="architecture" data-i18n="tabArch">معماری و استیت</button>
-      <button class="skill-tab" data-category="tools" data-i18n="tabTools">دواپس و ابزارها</button>
+      <button class="skill-tab btn-magnetic active" data-category="all" data-i18n="tabAll">همه مهارت‌ها</button>
+      <button class="skill-tab btn-magnetic" data-category="mobile" data-i18n="tabMobile">موبایل و کراس‌پلتفرم</button>
+      <button class="skill-tab btn-magnetic" data-category="backend" data-i18n="tabBackend">بک‌اند و ابری</button>
+      <button class="skill-tab btn-magnetic" data-category="architecture" data-i18n="tabArch">معماری و استیت</button>
+      <button class="skill-tab btn-magnetic" data-category="tools" data-i18n="tabTools">دواپس و ابزارها</button>
     </div>
     <div class="skills-grid" id="skills-grid">
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">📱 Flutter & Mobile Engineering</span>
-          <span class="skill-pct">98%</span>
+      <div class="skill-card reveal" data-category="mobile">
+        <div class="skill-card-top">
+          <span class="skill-badge">Core Expertise</span>
+          <h3 class="skill-title">موتور رندرینگ فلاتر و گرافیک Impeller</h3>
+        </div>
+        <p class="skill-desc">تسلط عمیق بر فلاتر ۳، خط لوله رندرینگ Impeller، شیدرهای GLSL، فیزیک موشن ۱۲۰ فریم، CustomPainter و بهینه‌سازی نشت حافظه.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Flutter 3.x</span>
+          <span class="skill-tag">Dart 3</span>
+          <span class="skill-tag">Impeller</span>
+          <span class="skill-tag">CustomPainter</span>
+          <span class="skill-tag">Memory Profiling</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">⚡ State Management Architectures</span>
-          <span class="skill-pct">95%</span>
+
+      <div class="skill-card reveal" data-category="architecture">
+        <div class="skill-card-top">
+          <span class="skill-badge">Architecture</span>
+          <h3 class="skill-title">معماری تمیز و مدیریت استیت واکنشی</h3>
+        </div>
+        <p class="skill-desc">طراحی لایه‌های تفکیک‌شده دامنه (DDD)، استانداردهای SOLID، مدیریت استیت BLoC/Cubit، و تزریق وابستگی با get_it و injectable.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Clean Architecture</span>
+          <span class="skill-tag">BLoC / Cubit</span>
+          <span class="skill-tag">SOLID</span>
+          <span class="skill-tag">Dependency Injection</span>
+          <span class="skill-tag">TDD</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">🏗️ Clean Architecture & Design Patterns</span>
-          <span class="skill-pct">95%</span>
+
+      <div class="skill-card reveal" data-category="mobile">
+        <div class="skill-card-top">
+          <span class="skill-badge">Systems</span>
+          <h3 class="skill-title">پل‌های نیتیو پلتفرم و دسترسی سخت‌افزاری</h3>
+        </div>
+        <p class="skill-desc">پیاده‌سازی ارتباط سریع بین Dart و سیستم‌عامل‌های نیتیو (کاتلین/سوئیفت) با MethodChannel، حسگرها و بایندرهای C-FFI.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">MethodChannel</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Swift</span>
+          <span class="skill-tag">Sensors API</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">🔥 Firebase & Cloud Infrastructure</span>
-          <span class="skill-pct">96%</span>
+
+      <div class="skill-card reveal" data-category="mobile">
+        <div class="skill-card-top">
+          <span class="skill-badge">Performance</span>
+          <h3 class="skill-title">پایگاه‌داده آفلاین و پردازش موازی</h3>
+        </div>
+        <p class="skill-desc">پایگاه‌های داده پرسرعت محلی (Hive, Isar, Drift)، پردازش در پس‌زمینه با Dart Isolates و همگام‌سازی بدون وقفه داده‌ها.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Hive DB</span>
+          <span class="skill-tag">Isar DB</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">Dart Isolates</span>
+          <span class="skill-tag">Offline Sync</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">🌐 RESTful APIs, Dio & WebSockets</span>
-          <span class="skill-pct">94%</span>
+
+      <div class="skill-card reveal" data-category="backend">
+        <div class="skill-card-top">
+          <span class="skill-badge">Backend & Cloud</span>
+          <h3 class="skill-title">اکوسیستم ابری و پروتکل‌های شبکه</h3>
+        </div>
+        <p class="skill-desc">سرویس‌های فایربیس (FCM, Crashlytics, Firestore)، کلاینت RESTful با Dio و اینترسپتورهای پیشرفته، وب‌سوکت و توکن رفرش امن.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Firebase Suite</span>
+          <span class="skill-tag">REST APIs (Dio)</span>
+          <span class="skill-tag">WebSockets</span>
+          <span class="skill-tag">Auth & JWT</span>
         </div>
       </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">🎨 UI/UX & Motion Engineering</span>
-          <span class="skill-pct">97%</span>
+
+      <div class="skill-card reveal" data-category="tools">
+        <div class="skill-card-top">
+          <span class="skill-badge">DevOps</span>
+          <h3 class="skill-title">اتوماسیون CI/CD و انتشار در استورها</h3>
         </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">🛠️ Git, GitHub Actions & CI/CD</span>
-          <span class="skill-pct">92%</span>
-        </div>
-      </div>
-      <div class="skill-card reveal">
-        <div class="skill-header">
-          <span class="skill-name">💾 Offline Sync & Local Databases</span>
-          <span class="skill-pct">94%</span>
+        <p class="skill-desc">تست‌های خودکار یونیت و ویجت، پایپ‌لاین‌های گیت‌هاب اکشنز، امضای خودکار با Fastlane و انتشار رسمی در گوگل پلی و اپ استور.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Fastlane</span>
+          <span class="skill-tag">Google Play</span>
+          <span class="skill-tag">App Store</span>
         </div>
       </div>
     </div>
@@ -366,39 +543,110 @@
     </div>
     <div class="projects-grid" id="projects-grid">
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">⚖️ پلتفرم خدمات حقوقی ویکیلا (WeekiLaw)</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">محصول تجاری • استورها</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">پلتفرم خدمات حقوقی ویکیلا (WeekiLaw)</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">پلتفرم جامع خدمات حقوقی و دستیار هوش مصنوعی حقوقی برای ارتباط شهروندان با ۲۴۰+ وکیل و دفتر کار هوشمند. منتشر شده در گوگل پلی استور (Google Play)، اپ استور (Apple App Store)، کافه‌بازار و مایکت.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Google Play</span>
+            <span class="tag-pill">App Store</span>
+            <span class="tag-pill">Flutter 3</span>
+            <span class="tag-pill">AI Engine</span>
+            <span class="tag-pill">BLoC</span>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">🎮 اپلیکیشن فریم‌سنج (FrameSanj)</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">ابزار تحلیلی • دیتابیس محلی</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">اپلیکیشن فریم‌سنج (FrameSanj)</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">اپلیکیشن سنجش سخت‌افزار و تخمین فریم ریت (FPS) بازی‌های کامپیوتری به‌صورت آفلاین همراه با تحلیل سیستم و معماری تمیز.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Flutter</span>
+            <span class="tag-pill">Dart 3</span>
+            <span class="tag-pill">Offline DB</span>
+            <span class="tag-pill">Clean Arch</span>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">🕌 اپلیکیشن مذهبی و سبک زندگی مبین</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">۱,۵۰۰+ نصب فعال</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">اپلیکیشن مذهبی و سبک زندگی مبین</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">اپلیکیشن کاربردی اوقات شرعی، قبله‌نما، تعقیبات و ذکرشمار هوشمند با بیش از ۱۵۰۰ نصب فعال در کافه‌بازار.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Flutter</span>
+            <span class="tag-pill">Location Services</span>
+            <span class="tag-pill">Sensors API</span>
+            <span class="tag-pill">Offline First</span>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">🔤 اپلیکیشن واژه‌جو (VazheJoo)</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">الگوریتم و پردازش زبان</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">اپلیکیشن واژه‌جو (VazheJoo)</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">اپلیکیشن یافتن واژگان و الگوریتم هوشمند پیدا کردن کلمات مخفی فارسی به صورت کاملاً آفلاین.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Flutter</span>
+            <span class="tag-pill">Algorithms</span>
+            <span class="tag-pill">Persian NLP</span>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">💡 پروژه مدرن Yariex</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">فایربیس و معماری تمیز</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">پروژه مدرن Yariex</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">پروژه قدرتمند فلاتر با آخرین استانداردهای UI/UX، سرویس‌های Real-time فایربیس و ساختار Clean Architecture.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Flutter</span>
+            <span class="tag-pill">Firebase</span>
+            <span class="tag-pill">BLoC</span>
+            <span class="tag-pill">Clean Arch</span>
+          </div>
         </div>
       </div>
       <div class="project-card reveal">
-        <div class="project-content">
-          <h3 class="project-title">👟 فروشگاه آنلاین Nike Store</h3>
+        <div class="project-card-header">
+          <div class="project-card-top">
+            <span class="project-badge">موشن دیزاین و فروشگاه</span>
+            <span class="project-status-dot"></span>
+          </div>
+          <h3 class="project-title">فروشگاه آنلاین Nike Store</h3>
+        </div>
+        <div class="project-body">
           <p class="project-desc">اپلیکیشن فروشگاهی فوق‌العاده شیک با انیمیشن‌های روان، مدیریت سبد خرید و مراحل سفارش‌گیری کامل.</p>
+          <div class="project-tags">
+            <span class="tag-pill">Flutter</span>
+            <span class="tag-pill">Hero Animations</span>
+            <span class="tag-pill">UI/UX</span>
+          </div>
         </div>
       </div>
     </div>
@@ -454,18 +702,16 @@
     </div>
   </section>
 
-  <!-- Clean Human Footer -->
-  <footer class="footer" style="padding: 2.5rem 0; border-top: 1px solid var(--border-glass); text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <p>© <span id="year">2026</span> Ashkan Abavi (AchkanDev) • <a href="mailto:Ashkan.abavi1@gmail.com" style="color: var(--primary-cyan); text-decoration: none; font-weight: 500;" data-i18n="footerRights">Ashkan.abavi1@gmail.com</a></p>
     </div>
   </footer>
 
   <!-- Scripts with Cache Busting Version Query -->
-  <script src="js/config.js?v=8"></script>
-  <script src="js/translations.js?v=8"></script>
-  <script src="js/particles.js?v=8"></script>
-  <script src="js/terminal.js?v=8"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/config.js?v=9"></script>
+  <script src="js/translations.js?v=9"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Antigravity CV/Portfolio Configuration - Ashkan Abavi (AchkanDev)
+   Portfolio Configuration - Ashkan Abavi (AchkanDev)
    ========================================================================== */
 
 const PORTFOLIO_DATA = {
@@ -19,20 +19,6 @@ const PORTFOLIO_DATA = {
     telegram: "https://t.me/achkandev",
   },
 
-  typewriterTitlesEn: [
-    "Senior Mobile Application Engineer 📱",
-    "Cross-Platform Systems Architect 🏗️",
-    "High-Performance Mobile Specialist ⚡",
-    "UI/UX & Motion Engineering Specialist 🎨"
-  ],
-
-  typewriterTitlesFa: [
-    "مهندس ارشد اپلیکیشن‌های موبایل 📱",
-    "معمار سیستم‌های کراس‌پلتفرم 🏗️",
-    "متخصص توسعه محصولات پیشرفته موبایل ⚡",
-    "طراح و مهندس انیمیشن و UI/UX 🎨"
-  ],
-
   stats: [
     { number: "826+", labelEn: "GitHub Commits / Yr", labelFa: "کامیت فعال در یک سال گذشته" },
     { number: "14+", labelEn: "Repositories", labelFa: "ریپازیتوری‌های پروژه" },
@@ -48,10 +34,10 @@ const PORTFOLIO_DATA = {
       titleFa: "WeekiLaw (ویکیلا)",
       subtitleEn: "AI Legal Assistant & Smart Office",
       subtitleFa: "دستیار هوش مصنوعی و دفتر کار حقوقی",
-      icon: "⚖️",
+      iconType: "legal",
       badgeEn: "Google Play & App Store",
       badgeFa: "گوگل پلی، اپ استور و بازار",
-      uiColor: "#7f00ff",
+      uiColor: "#38bdf8",
       mockupDataEn: {
         screenTitle: "WeekiLaw AI Assistant",
         query: "Contract Analysis & Consultation...",
@@ -73,10 +59,10 @@ const PORTFOLIO_DATA = {
       titleFa: "FrameSanj (فریم‌سنج)",
       subtitleEn: "PC Game FPS & Specs Analyzer",
       subtitleFa: "سنجش سخت‌افزار و تخمین فریم ریت",
-      icon: "🎮",
+      iconType: "hardware",
       badgeEn: "CafeBazaar & Myket",
       badgeFa: "کافه بازار و مایکت",
-      uiColor: "#00f2fe",
+      uiColor: "#0ea5e9",
       mockupDataEn: {
         screenTitle: "FrameSanj Hardware Analyzer",
         game: "Cyberpunk 2077 / Witcher 3",
@@ -102,7 +88,7 @@ const PORTFOLIO_DATA = {
       titleFa: "Mobin (مبین)",
       subtitleEn: "Spiritual Companion & Qibla Finder",
       subtitleFa: "قبله‌نما، اوقات شرعی و ذکرشمار",
-      icon: "🕌",
+      iconType: "spiritual",
       badgeEn: "1,500+ Active Installs",
       badgeFa: "۱,۵۰۰+ نصب فعال",
       uiColor: "#10b981",
@@ -124,14 +110,66 @@ const PORTFOLIO_DATA = {
   ],
 
   skills: [
-    { name: "Flutter & Mobile Engineering", category: "mobile", percent: 98, icon: "📱" },
-    { name: "State Management Architectures", category: "architecture", percent: 95, icon: "⚡" },
-    { name: "Clean Architecture & Design Patterns", category: "architecture", percent: 95, icon: "🏗️" },
-    { name: "Firebase & Cloud Infrastructure", category: "backend", percent: 96, icon: "🔥" },
-    { name: "RESTful APIs, Dio & WebSockets", category: "backend", percent: 94, icon: "🌐" },
-    { name: "UI/UX & Motion Engineering", category: "mobile", percent: 97, icon: "🎨" },
-    { name: "Git, GitHub Actions & CI/CD", category: "tools", percent: 92, icon: "🛠️" },
-    { name: "Offline Sync & Local Databases", category: "mobile", percent: 94, icon: "💾" }
+    {
+      id: "flutter-core",
+      titleEn: "Flutter Core & Impeller Graphics",
+      titleFa: "موتور رندرینگ فلاتر و گرافیک Impeller",
+      category: "mobile",
+      badge: "Core Expertise",
+      descEn: "Deep mastery of Flutter 3.x, Impeller rendering pipeline, GLSL shaders, 120 FPS motion physics, CustomPainters, and memory leak profiling.",
+      descFa: "تسلط عمیق بر فلاتر ۳، خط لوله رندرینگ Impeller، شیدرهای GLSL، فیزیک موشن ۱۲۰ فریم، CustomPainter و بهینه‌سازی نشت حافظه.",
+      tags: ["Flutter 3.x", "Dart 3", "Impeller", "CustomPainter", "DevTools", "Memory Profiling"]
+    },
+    {
+      id: "clean-arch",
+      titleEn: "Clean Architecture & State Engines",
+      titleFa: "معماری تمیز و مدیریت استیت واکنشی",
+      category: "architecture",
+      badge: "Architecture",
+      descEn: "Production design of decoupled domain-driven layers, strict SOLID principles, BLoC/Cubit, Riverpod, and dependency injection via get_it/injectable.",
+      descFa: "طراحی لایه‌های تفکیک‌شده دامنه (DDD)، استانداردهای SOLID، مدیریت استیت BLoC/Cubit، و تزریق وابستگی با get_it و injectable.",
+      tags: ["Clean Architecture", "BLoC / Cubit", "SOLID", "Dependency Injection", "TDD"]
+    },
+    {
+      id: "native-interop",
+      titleEn: "Native Platform Bridges & Hardware",
+      titleFa: "پل‌های نیتیو پلتفرم و دسترسی سخت‌افزاری",
+      category: "mobile",
+      badge: "Systems",
+      descEn: "Seamless bridge communication between Dart and native Kotlin/Swift using MethodChannels, EventChannels, sensor integration, and C-FFI bindings.",
+      descFa: "پیاده‌سازی ارتباط سریع بین Dart و سیستم‌عامل‌های نیتیو (کاتلین/سوئیفت) با MethodChannel، حسگرها و بایندرهای C-FFI.",
+      tags: ["MethodChannel", "Kotlin (Android)", "Swift (iOS)", "Sensors API", "C-FFI"]
+    },
+    {
+      id: "offline-sync",
+      titleEn: "Offline-First Storage & Concurrency",
+      titleFa: "پایگاه‌داده آفلاین و پردازش موازی",
+      category: "mobile",
+      badge: "Performance",
+      descEn: "High-performance local databases (Hive, Isar DB, SQLite/Drift), background concurrency with Dart Isolates, and conflict-free data sync engines.",
+      descFa: "پایگاه‌های داده پرسرعت محلی (Hive, Isar, Drift)، پردازش در پس‌زمینه با Dart Isolates و همگام‌سازی بدون وقفه داده‌ها.",
+      tags: ["Hive DB", "Isar DB", "SQLite / Drift", "Dart Isolates", "Offline Sync"]
+    },
+    {
+      id: "cloud-backend",
+      titleEn: "Cloud Ecosystem & Network Protocols",
+      titleFa: "اکوسیستم ابری و پروتکل‌های شبکه",
+      category: "backend",
+      badge: "Backend & Cloud",
+      descEn: "Full Firebase suite (Auth, Firestore, Cloud Messaging, Crashlytics), RESTful APIs with Dio interceptors, WebSockets, and secure token refresh.",
+      descFa: "سرویس‌های فایربیس (FCM, Crashlytics, Firestore)، کلاینت RESTful با Dio و اینترسپتورهای پیشرفته، وب‌سوکت و توکن رفرش امن.",
+      tags: ["Firebase Suite", "REST APIs (Dio)", "WebSockets", "Auth & JWT", "PostgreSQL"]
+    },
+    {
+      id: "devops-ci",
+      titleEn: "CI/CD Automation & Store Publishing",
+      titleFa: "اتوماسیون CI/CD و انتشار در استورها",
+      category: "tools",
+      badge: "DevOps",
+      descEn: "Automated test suites (Unit, Widget, Golden Tests), GitHub Actions workflows, Fastlane code signing, and global release on Google Play & App Store.",
+      descFa: "تست‌های خودکار یونیت و ویجت، پایپ‌لاین‌های گیت‌هاب اکشنز، امضای خودکار با Fastlane و انتشار رسمی در گوگل پلی و اپ استور.",
+      tags: ["GitHub Actions", "CI/CD", "flutter_test", "Fastlane", "Google Play", "App Store"]
+    }
   ],
 
   experience: [
@@ -160,13 +198,25 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: "weekilaw",
+      featured: true,
       titleEn: "WeekiLaw Legal Platform",
       titleFa: "پلتفرم خدمات حقوقی ویکیلا (WeekiLaw)",
       category: "mobile",
-      icon: "⚖️",
-      descEn: "AI-Powered Legal Services Platform connecting citizens with verified lawyers + AI legal assistant + lawyer smart office. Published on Google Play Store, Apple App Store, CafeBazaar & Myket.",
-      descFa: "پلتفرم جامع خدمات حقوقی و دستیار هوش مصنوعی حقوقی برای ارتباط شهروندان با وکلا و دفتر کار هوشمند. منتشر شده در گوگل پلی استور (Google Play)، اپ استور (App Store)، کافه‌بازار و مایکت.",
-      tags: ["Google Play", "App Store", "Flutter", "AI Assistant", "REST API", "BLoC", "Firebase"],
+      badgeEn: "Featured Flagship • Production",
+      badgeFa: "پروژه شاخص پروداکشن • استورها",
+      descEn: "Commercial Legal Services Platform connecting citizens with 240+ verified attorneys, featuring automated AI contract parsing and a full-suite smart law office. Architected with Flutter 3, Decoupled Clean Architecture, and Isar offline sync.",
+      descFa: "پلتفرم جامع خدمات حقوقی با بیش از ۲۴۰ وکیل رسمی، دستیار هوش مصنوعی تحلیل قراردادهای تجاری و دفتر کار آنلاین وکلا. پیاده‌سازی شده با فلاتر ۳، معماری تمیز تفکیک‌شده و کشینگ دیتابیس محلی.",
+      highlightsEn: [
+        "240+ verified attorneys & real-time audio/case consultation",
+        "AI legal engine for automated contract & clause risk assessment",
+        "Published across Google Play, Apple App Store, CafeBazaar & Myket"
+      ],
+      highlightsFa: [
+        "۲۴۰+ وکیل رسمی و مشاوره صوتی و نوبت‌دهی آنلاین",
+        "موتور هوش مصنوعی ارزیابی و تحلیل ریسک بندهای قرارداد",
+        "منتشر شده رسمی در Google Play، App Store، کافه‌بازار و مایکت"
+      ],
+      tags: ["Google Play", "App Store", "Flutter 3", "AI Engine", "Clean Architecture", "BLoC", "Isar DB"],
       github: "https://github.com/AchkanDev/weekilaw-showcase",
       live: "https://cafebazaar.ir/app/com.pqlian.weekilaw"
     },
@@ -175,10 +225,11 @@ const PORTFOLIO_DATA = {
       titleEn: "FrameSanj Analyzer",
       titleFa: "اپلیکیشن فریم‌سنج (FrameSanj)",
       category: "mobile",
-      icon: "🎮",
+      badgeEn: "Utility • Hardware Engine",
+      badgeFa: "ابزار تحلیلی • دیتابیس محلی",
       descEn: "Offline PC game compatibility & FPS estimator — compare CPU/GPU/RAM specs with minimum/recommended game requirements.",
       descFa: "اپلیکیشن سنجش سخت‌افزار و تخمین فریم ریت (FPS) بازی‌های کامپیوتری به‌صورت آفلاین همراه با تحلیل سیستم.",
-      tags: ["Flutter", "Dart", "Offline DB", "UI/UX", "Clean Arch"],
+      tags: ["Flutter", "Dart 3", "Offline DB", "UI/UX", "Clean Arch"],
       github: "https://github.com/AchkanDev/gamegauge-showcase",
       live: "https://cafebazaar.ir/app/com.example.game_guge"
     },
@@ -187,7 +238,8 @@ const PORTFOLIO_DATA = {
       titleEn: "Mobin Spiritual App",
       titleFa: "اپلیکیشن مذهبی و سبک زندگی مبین",
       category: "mobile",
-      icon: "🕌",
+      badgeEn: "1,500+ Active Installs",
+      badgeFa: "۱,۵۰۰+ نصب فعال",
       descEn: "Spiritual Companion App featuring daily prayers, Qibla compass, prayer times, Dhikr counter — 1,500+ installs on CafeBazaar.",
       descFa: "اپلیکیشن کاربردی اوقات شرعی، قبله‌نما، تعقیبات و ذکرشمار هوشمند با بیش از ۱۵۰۰ نصب فعال در کافه‌بازار.",
       tags: ["Flutter", "Location Services", "Sensors", "Offline First"],
@@ -199,7 +251,8 @@ const PORTFOLIO_DATA = {
       titleEn: "VazheJoo Word Finder",
       titleFa: "اپلیکیشن واژه‌جو (VazheJoo)",
       category: "mobile",
-      icon: "🔤",
+      badgeEn: "Persian NLP • Algorithm",
+      badgeFa: "الگوریتم و پردازش زبان",
       descEn: "Persian offline word finder to discover hidden words using Persian letters and smart word generation algorithm.",
       descFa: "اپلیکیشن یافتن واژگان و الگوریتم هوشمند پیدا کردن کلمات مخفی فارسی به صورت کاملاً آفلاین.",
       tags: ["Flutter", "Algorithms", "Persian NLP", "Clean Arch"],
@@ -211,7 +264,8 @@ const PORTFOLIO_DATA = {
       titleEn: "Yariex Modern App",
       titleFa: "پروژه مدرن Yariex",
       category: "mobile",
-      icon: "💡",
+      badgeEn: "Cloud & Clean Architecture",
+      badgeFa: "فایربیس و معماری تمیز",
       descEn: "Feature-rich Flutter application built with modern UI, real-time Firebase backend, and Clean Architecture.",
       descFa: "پروژه قدرتمند فلاتر با آخرین استانداردهای UI/UX، سرویس‌های Real-time فایربیس و ساختار Clean Architecture.",
       tags: ["Flutter", "Firebase", "BLoC", "Clean Architecture"],
@@ -223,10 +277,11 @@ const PORTFOLIO_DATA = {
       titleEn: "Nike Store E-Commerce",
       titleFa: "فروشگاه آنلاین Nike Store",
       category: "mobile",
-      icon: "👟",
+      badgeEn: "Fluid Motion & Store Flow",
+      badgeFa: "موشن دیزاین و فروشگاه",
       descEn: "Premium e-commerce Flutter app with fluid hero animations, cart management, and payment checkout flow.",
       descFa: "اپلیکیشن فروشگاهی فوق‌العاده شیک با انیمیشن‌های روان، مدیریت سبد خرید و مراحل سفارش‌گیری.",
-      tags: ["Flutter", "UI/UX", "State Management", "Animations"],
+      tags: ["Flutter", "UI/UX", "State Management", "Hero Animations"],
       github: "https://github.com/AchkanDev/Nike_store",
       live: "https://github.com/AchkanDev/Nike_store"
     }
